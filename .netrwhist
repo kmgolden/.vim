@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/mojpro/code/src/github.com/saxcap-local-v2/saxcap'
+let g:netrw_dirhist_2='/Users/mojpro/code/src/github.com/saxcap-local-v2/saxcap/saxcap'
+let g:netrw_dirhist_3='/Users/mojpro/code/src/github.com/sax-website/sax/sax'
+let g:netrw_dirhist_4='/Users/mojpro/code/src/github.com/sax-website/sax/dynamic'
