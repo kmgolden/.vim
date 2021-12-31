@@ -37,3 +37,5 @@ set pastetoggle=<f5>
 
 set number relativenumber
 set nu rnu
+
+set background=dark
