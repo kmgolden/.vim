@@ -9,7 +9,9 @@ set backspace=indent,eol,start
 " Unbind some useless/annoying default key bindings.
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
-" filetype plugin indent on
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 syntax on
 set tabstop=2
 set shiftwidth=2
