@@ -40,3 +40,5 @@ set nu rnu
 
 set background=dark
 
+let g:astro_typescript = 'enable'
+
