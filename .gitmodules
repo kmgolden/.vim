@@ -10,3 +10,6 @@
 [submodule "pack/plugins/start/vim-taskpaper"]
 	path = pack/plugins/start/vim-taskpaper
 	url = https://github.com/cweagans/vim-taskpaper.git
+[submodule "pack/plugins/start/vim-astro"]
+	path = pack/plugins/start/vim-astro
+	url = https://github.com/wuelnerdotexe/vim-astro.git
