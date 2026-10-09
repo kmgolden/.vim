@@ -18,3 +18,7 @@
 	path = pack/plugins/start/vim-astro
 	url = https://github.com/wuelnerdotexe/vim-astro.git
 	branch = main
+[submodule "pack/plugins/start/dracula"]
+	path = pack/plugins/start/dracula
+	url = https://github.com/dracula/vim.git
+	branch = master

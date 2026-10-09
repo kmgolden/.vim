@@ -57,10 +57,22 @@ set undofile
 let g:netrw_home = s:state
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'dracula',
       \ }
 
+" True color where the terminal supports it. Native Windows vim needs it to
+" render italics/bold as font styles instead of console color pairs.
+if has('termguicolors') && (has('win32') || $COLORTERM =~# 'truecolor\|24bit' || exists('$WT_SESSION'))
+  try
+    set termguicolors
+  catch /E954/
+    " console without VT support: stay on 16/256 colors
+  endtry
+endif
+
 set background=dark
+packadd! dracula
+silent! colorscheme dracula
 
 let g:astro_typescript = 'enable'
 
