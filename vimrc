@@ -1,4 +1,10 @@
 "Thanks MIT Vim class
+"
+" Portable config: keep machine- or employer-specific settings out of this repo.
+" Put them in ~/.vimrc.local (sourced at the end, never committed).
+
+set nocompatible
+set encoding=utf-8
 
 " The backspace key has slightly unintuitive behavior by default. For example,
 " by default, you can't backspace before the insertion point set with 'i'.
@@ -7,38 +13,58 @@
 set backspace=indent,eol,start
 
 " Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+" 'Q' in normal mode enters Ex mode. You almost never want this.
+nnoremap Q <Nop>
 
-filetype plugin on
+filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-
 syntax on
+
 set tabstop=2
 set shiftwidth=2
 set hidden
-set number
+set number relativenumber
+set pastetoggle=<f5>
+
+" lightline shows the mode, so hide the default one
+set laststatus=2
+set noshowmode
 
 "natural split opening
 set splitbelow
 set splitright
 
-" Search setings
+" Search settings
 set ignorecase
 set smartcase
+set incsearch
 
 " Turn off error notifications
 set noerrorbells visualbell t_vb=
 
+" Keep swap/backup/undo/netrw files out of working trees (so they never land in
+" a repo by accident). Trailing // encodes the full path in the file name.
+let s:state = expand('~/.vim/state')
+for s:dir in ['swap', 'backup', 'undo']
+  if !isdirectory(s:state . '/' . s:dir)
+    call mkdir(s:state . '/' . s:dir, 'p')
+  endif
+endfor
+let &directory = s:state . '/swap//'
+let &backupdir = s:state . '/backup//'
+let &undodir   = s:state . '/undo//'
+set undofile
+let g:netrw_home = s:state
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
-set pastetoggle=<f5>
-
-set number relativenumber
-set nu rnu
 
 set background=dark
 
 let g:astro_typescript = 'enable'
 
+" Machine-local overrides (not in this repo).
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif

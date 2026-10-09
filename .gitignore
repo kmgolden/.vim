@@ -1,2 +1,9 @@
 .DS_Store
 _archive
+
+# Runtime state: machine-specific, may contain local paths
+.netrwhist
+state/
+*.swp
+*.swo
+*~
