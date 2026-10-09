@@ -64,6 +64,11 @@ set background=dark
 
 let g:astro_typescript = 'enable'
 
+" Syntax highlighting inside fenced Markdown code blocks
+" (Markdown display settings live in after/ftplugin/markdown.vim)
+let g:markdown_fenced_languages = ['sh', 'vim', 'json', 'html', 'css',
+      \ 'js=javascript', 'ts=typescript']
+
 " Machine-local overrides (not in this repo).
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local

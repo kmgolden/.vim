@@ -29,3 +29,9 @@ git commit -am "Bump plugins"
 ```sh
 git submodule add -b master https://github.com/OWNER/REPO.git pack/plugins/start/REPO
 ```
+
+## Markdown
+
+`after/ftplugin/markdown.vim` hides the `**` / `_` / `~~` markers (they come
+back on the cursor line) and soft-wraps prose. Fenced code block languages are
+set by `g:markdown_fenced_languages` in `vimrc`.
