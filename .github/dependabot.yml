@@ -7,5 +7,7 @@ updates:
       day: "monday"
       time: "03:00"
     commit-message:
-      prefix: "chore"
-      prefix-scope: "submodules"
+      prefix: "chore(submodules)"
+    groups:
+      vim-plugins:
+        patterns: ["*"]
